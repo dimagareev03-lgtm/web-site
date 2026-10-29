@@ -198,7 +198,7 @@ main{display:flex;flex-direction:column}
 .about-nav a+a{border-top:1px solid var(--line)}
 .about-nav a:hover{background:var(--accent);color:var(--on-accent)}
 .about-main{min-width:0}
-.about-hero{width:100%;border-radius:18px;display:block}
+.about-hero{width:100%;height:min(38vh,340px);object-fit:cover;object-position:50% 58%;border-radius:18px;display:block}
 .about-main h3{font-size:clamp(18px,2vw,23px);text-transform:uppercase;letter-spacing:.03em;margin:30px 0 16px}
 .about-main p{margin:0 0 14px;color:var(--muted);max-width:68ch}
 .gal{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px}
@@ -406,13 +406,13 @@ nav{display:none}
 </div></div></div></div></div>
 <div class="modal" id="aboutModal" hidden><div class="modal-back" data-close></div><div class="modal-win wide" role="dialog" aria-modal="true" aria-labelledby="aboutTitle"><button class="modal-x" type="button" data-close aria-label="Закрыть">✕</button><p class="crumb">О компании</p><h2 id="aboutTitle">О клинике</h2>
 <div class="about"><aside class="about-nav"><a href="#" data-open="teamModal">Врачи</a><a href="#" data-open="docsModal">Лицензии и документы</a></aside>
-<div class="about-main"><img class="about-hero" src="about-hero.jpg" alt="Ресепшен клиники Кастадент" loading="lazy">
+<div class="about-main"><img class="about-hero" src="clinic-4.jpg" alt="Ресепшен клиники Кастадент" loading="lazy">
 <h3>О клинике</h3>
 <p>Клиника Кастадент имеет полностью новое оборудование. Это означает, что оно полностью рабочее, максимально эффективное.</p>
 <p>Врачи клиники учились не только в медицинских ВУЗах страны, но и у ТОП-врачей РФ и за рубежом. Это означает, что вам предложат максимально современное и действенное лечение.</p>
 <p>За все, что происходит в клинике отвечает главврач Кастанов Игорь Сергеевич. Очень душевный человек, который и сложил такую дружелюбную атмосферу среди врачей и пациентов. Главврач — ортопед, хирург, гнатолог.</p>
 <p>Мы присмотрим за ребенком пока вас принимает доктор.</p>
-<div class="gal"><span><img src="about-1.jpg" alt="Зона ожидания" loading="lazy"></span><span><img src="about-2.jpg" alt="Стоматологический кабинет" loading="lazy"></span><span><img src="about-3.jpg" alt="Кресло и оборудование" loading="lazy"></span><span><img src="about-4.jpg" alt="Ресепшен" loading="lazy"></span><span><img src="about-5.jpg" alt="Холл клиники" loading="lazy"></span><span><img src="about-6.jpg" alt="Стойка администратора" loading="lazy"></span></div>
+<div class="gal"><span><img src="clinic-1.jpg" alt="Зона ожидания с диванами" loading="lazy"></span><span><img src="clinic-2.jpg" alt="Стоматологический кабинет у окна" loading="lazy"></span><span><img src="clinic-3.jpg" alt="Кресло и оборудование врача" loading="lazy"></span><span><img src="clinic-4.jpg" alt="Ресепшен клиники" loading="lazy"></span><span><img src="clinic-5.jpg" alt="Стойка администратора и холл" loading="lazy"></span><span><img src="clinic-6.jpg" alt="Холл клиники с растениями" loading="lazy"></span></div>
 </div></div></div></div>
 <div class="modal" id="docsModal" hidden><div class="modal-back" data-close></div><div class="modal-win wide" role="dialog" aria-modal="true" aria-labelledby="docsTitle"><button class="modal-x" type="button" data-close aria-label="Закрыть">✕</button><p class="crumb"><a href="#" data-open="aboutModal">О компании</a></p><h2 id="docsTitle">Лицензии и документы</h2><div class="about"><aside class="about-nav"><a href="#" data-open="teamModal">Врачи</a><a href="#" class="on">Лицензии и документы</a></aside><div class="about-main"><p class="certs-intro">Сертификаты соответствия — это документы, подтверждающие соответствие всем соответствующим требованиям в министерских законах текущего государства, установленными в обязательном порядке.</p>
 <div class="certs">
