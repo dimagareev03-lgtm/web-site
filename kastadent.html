@@ -151,6 +151,10 @@ form{background:var(--surface);border:1px solid var(--line);backdrop-filter:blur
 input{font:inherit;padding:14px 18px;border-radius:14px;border:1px solid var(--line);background:transparent;color:var(--ink)}
 label.c{font-size:13px;color:var(--muted)}
 .ok{display:none;color:var(--accent);font-weight:500}
+.book-box{display:grid;gap:14px;align-content:start;padding:30px;border:1px solid var(--line);border-radius:26px;background:var(--surface);backdrop-filter:blur(10px)}
+.book-box p{margin:0;color:var(--muted)}
+.book-box .btn{justify-self:start}
+.book-or{font-size:14px}
 footer{padding:34px 4vw;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid var(--line)}
 .rv{opacity:0;transform:translateY(34px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
 main{display:flex;flex-direction:column}
@@ -315,7 +319,7 @@ nav{display:none}
 <p><b>Мы не просто лечим зубы — мы создаем гармонию.</b> Мы не посчитаем лишних доп. услуг, если они не нужны для решения вашей задачи.</p>
 <p><a class="btn" href="#contact" data-book>Записаться на консультацию</a></p>
 </div></div>
-<section id="services"><h2 class="rv">Услуги</h2><div class="services"><a class="card rv" href="#contact"><div class="ph"><img src="svc-chistka.jpg" alt="Профессиональная чистка зубов щёточкой" loading="lazy"></div><h3>Чистка зубов</h3><span>КОНСУЛЬТАЦИЯ</span></a><a class="card rv" href="#contact"><div class="ph"><img src="svc-lechenie.jpg" alt="Лечение зуба под микромотором" loading="lazy"></div><h3>Лечение зубов</h3><span>КОНСУЛЬТАЦИЯ</span></a><a class="card rv" href="#contact"><div class="ph"><img src="svc-ryad.jpg" alt="Протез зубного ряда в руках врача" loading="lazy"></div><h3>Восстановление зубного ряда</h3><span>КОНСУЛЬТАЦИЯ</span></a><a class="card rv" href="#contact"><div class="ph"><img src="svc-viniry.jpg" alt="Подбор оттенка винира по шкале" loading="lazy"></div><h3>Виниры для зубов</h3><span>КОНСУЛЬТАЦИЯ</span></a><a class="card rv" href="#contact"><div class="ph"><img src="svc-koronki.jpg" alt="Керамические коронки на гипсовой модели" loading="lazy"></div><h3>Зубные коронки</h3><span>КОНСУЛЬТАЦИЯ</span></a><a class="card rv" href="#contact"><div class="ph"><img src="svc-gnatologia.jpg" alt="Снятие прикуса лицевой дугой" loading="lazy"></div><h3>Гнатология</h3><span>КОНСУЛЬТАЦИЯ</span></a><a class="card rv" href="#contact"><div class="ph"><img src="svc-ortodontia.jpg" alt="Уход за брекет-системой" loading="lazy"></div><h3>Ортодонтия</h3><span>КОНСУЛЬТАЦИЯ</span></a></div></section>
+<section id="services"><h2 class="rv">Услуги</h2><div class="services"><a class="card rv" href="#contact" data-book><div class="ph"><img src="svc-chistka.jpg" alt="Профессиональная чистка зубов щёточкой" loading="lazy"></div><h3>Чистка зубов</h3><span>КОНСУЛЬТАЦИЯ</span></a><a class="card rv" href="#contact" data-book><div class="ph"><img src="svc-lechenie.jpg" alt="Лечение зуба под микромотором" loading="lazy"></div><h3>Лечение зубов</h3><span>КОНСУЛЬТАЦИЯ</span></a><a class="card rv" href="#contact" data-book><div class="ph"><img src="svc-ryad.jpg" alt="Протез зубного ряда в руках врача" loading="lazy"></div><h3>Восстановление зубного ряда</h3><span>КОНСУЛЬТАЦИЯ</span></a><a class="card rv" href="#contact" data-book><div class="ph"><img src="svc-viniry.jpg" alt="Подбор оттенка винира по шкале" loading="lazy"></div><h3>Виниры для зубов</h3><span>КОНСУЛЬТАЦИЯ</span></a><a class="card rv" href="#contact" data-book><div class="ph"><img src="svc-koronki.jpg" alt="Керамические коронки на гипсовой модели" loading="lazy"></div><h3>Зубные коронки</h3><span>КОНСУЛЬТАЦИЯ</span></a><a class="card rv" href="#contact" data-book><div class="ph"><img src="svc-gnatologia.jpg" alt="Снятие прикуса лицевой дугой" loading="lazy"></div><h3>Гнатология</h3><span>КОНСУЛЬТАЦИЯ</span></a><a class="card rv" href="#contact" data-book><div class="ph"><img src="svc-ortodontia.jpg" alt="Уход за брекет-системой" loading="lazy"></div><h3>Ортодонтия</h3><span>КОНСУЛЬТАЦИЯ</span></a></div></section>
 <section id="reviews"><h2 class="rv">Отзывы</h2><div class="rev"><div class="card rv"><small>Пациент +7-918-43XXXXX</small><p>Неоднократно обращалась к Абрамцову Андрею: сложное удаление зуба мудрости прошло быстро и безболезненно, имплант установлен отлично. Всем рекомендую!</p></div><div class="card rv"><small>Пациент +7-988-25XXXXX</small><p>Давно лечим зубы всей семьёй у доктора Бурлакова Романа. Врач внимательный, грамотный, находит подход даже к нашему сыну.</p></div><div class="card rv"><small>Гость</small><p>Андрей Александрович — стоматолог, проверенный временем. Бережно удаляет, мастерски проводит синус-лифтинг и имплантацию.</p></div></div></section>
 <section id="promo"><h2 class="rv">Акции</h2><div class="promo">
 <a class="pcard rv" href="#" data-open="promo1"><img src="promo-1c.jpg" alt="Пациентка на осмотре" loading="lazy"><span class="badge">Бесплатно</span><h3>Бесплатная общая диагностика и план лечения</h3></a>
@@ -381,15 +385,15 @@ nav{display:none}
 </div></div>
 <div class="modal" id="srvModal" hidden><div class="modal-back" data-close></div><div class="modal-win wide" role="dialog" aria-modal="true" aria-labelledby="srvTitle"><button class="modal-x" type="button" data-close aria-label="Закрыть">✕</button><p class="crumb">Услуги</p><h2 id="srvTitle">Услуги и цены</h2>
 <div class="srv">
-<a class="card" href="#" data-goto="#contact"><div class="ph"><img src="srv-viniry.jpg" alt="Виниры" loading="lazy"></div><h3>Виниры</h3></a>
-<a class="card" href="#" data-goto="#contact"><div class="ph"><img src="srv-gnat.jpg" alt="Гнатология" loading="lazy"></div><h3>Гнатология</h3></a>
-<a class="card" href="#" data-goto="#contact"><div class="ph"><img src="srv-deti.jpg" alt="Детская стоматология" loading="lazy"></div><h3>Детская стоматология</h3></a>
-<a class="card" href="#" data-goto="#contact"><div class="ph"><img src="srv-implant.jpg" alt="Имплантация" loading="lazy"></div><h3>Имплантация</h3></a>
-<a class="card" href="#" data-goto="#contact"><div class="ph"><img src="srv-koronki.jpg" alt="Коронки" loading="lazy"></div><h3>Коронки</h3></a>
-<a class="card" href="#" data-goto="#contact"><div class="ph"><img src="srv-ortho.jpg" alt="Ортодонтия" loading="lazy"></div><h3>Ортодонтия</h3></a>
-<a class="card" href="#" data-goto="#contact"><div class="ph"><img src="srv-protez.jpg" alt="Протезирование" loading="lazy"></div><h3>Протезирование</h3></a>
-<a class="card" href="#" data-goto="#contact"><div class="ph"><img src="srv-gigiena.jpg" alt="Профгигиена" loading="lazy"></div><h3>Профгигиена</h3></a>
-<a class="card" href="#" data-goto="#contact"><div class="ph"><img src="srv-terapia.jpg" alt="Терапия" loading="lazy"></div><h3>Терапия</h3></a>
+<a class="card" href="#" data-goto="#contact" data-book><div class="ph"><img src="srv-viniry.jpg" alt="Виниры" loading="lazy"></div><h3>Виниры</h3></a>
+<a class="card" href="#" data-goto="#contact" data-book><div class="ph"><img src="srv-gnat.jpg" alt="Гнатология" loading="lazy"></div><h3>Гнатология</h3></a>
+<a class="card" href="#" data-goto="#contact" data-book><div class="ph"><img src="srv-deti.jpg" alt="Детская стоматология" loading="lazy"></div><h3>Детская стоматология</h3></a>
+<a class="card" href="#" data-goto="#contact" data-book><div class="ph"><img src="srv-implant.jpg" alt="Имплантация" loading="lazy"></div><h3>Имплантация</h3></a>
+<a class="card" href="#" data-goto="#contact" data-book><div class="ph"><img src="srv-koronki.jpg" alt="Коронки" loading="lazy"></div><h3>Коронки</h3></a>
+<a class="card" href="#" data-goto="#contact" data-book><div class="ph"><img src="srv-ortho.jpg" alt="Ортодонтия" loading="lazy"></div><h3>Ортодонтия</h3></a>
+<a class="card" href="#" data-goto="#contact" data-book><div class="ph"><img src="srv-protez.jpg" alt="Протезирование" loading="lazy"></div><h3>Протезирование</h3></a>
+<a class="card" href="#" data-goto="#contact" data-book><div class="ph"><img src="srv-gigiena.jpg" alt="Профгигиена" loading="lazy"></div><h3>Профгигиена</h3></a>
+<a class="card" href="#" data-goto="#contact" data-book><div class="ph"><img src="srv-terapia.jpg" alt="Терапия" loading="lazy"></div><h3>Терапия</h3></a>
 </div></div></div>
 <div class="modal" id="teamModal" hidden><div class="modal-back" data-close></div><div class="modal-win wide" role="dialog" aria-modal="true" aria-labelledby="teamTitle"><button class="modal-x" type="button" data-close aria-label="Закрыть">✕</button><p class="crumb"><a href="#" data-open="aboutModal">О компании</a></p><h2 id="teamTitle">Врачи</h2>
 <div class="about"><aside class="about-nav"><a href="#" class="on">Врачи</a><a href="#" data-open="docsModal">Лицензии и документы</a></aside>
@@ -437,7 +441,7 @@ c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect(),x=(e.
 c.addEventListener('mouseleave',function(){c.style.transform=''})});
 // form
 var fd=document.getElementById('fd');if(fd){var d=new Date();fd.min=d.toISOString().slice(0,10);fd.value=fd.min}
-document.querySelectorAll('.services .card').forEach(function(c){c.addEventListener('click',function(){var o=document.getElementById('fs'),t=c.querySelector('h3').textContent;for(var i=0;i<o.options.length;i++)if(o.options[i].text===t)o.selectedIndex=i})});
+document.querySelectorAll('.services .card').forEach(function(c){c.addEventListener('click',function(){var o=document.getElementById('fs');if(!o)return;var t=c.querySelector('h3').textContent;for(var i=0;i<o.options.length;i++)if(o.options[i].text===t)o.selectedIndex=i})});
 document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();var g=function(i){return document.getElementById(i).value},addr='Краснодар, ул. Архитектора Ишунина, д. 3',dt=g('fd').split('-').reverse().join('.');
 var body='Новая запись в Кастадент\n\nУслуга: '+g('fs')+'\nКуда: '+addr+'\nКогда: '+dt+' в '+g('ft')+'\nИмя: '+(g('fn')||'не указано')+'\nТелефон: '+g('fp');
 var href='mailto:dimanado354@gmail.com?subject='+encodeURIComponent('Запись: '+g('fs')+', '+dt+' '+g('ft'))+'&body='+encodeURIComponent(body);
@@ -480,6 +484,22 @@ document.addEventListener('keydown',function(e){if(e.key!=='Escape')return;if(!l
 document.querySelectorAll('[data-goto]').forEach(function(a){a.addEventListener('click',function(e){if(a.hasAttribute('data-book')&&window.onlineBooking&&window.onlineBooking.open)return;e.preventDefault();closeAll();var t=document.querySelector(a.getAttribute('data-goto'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
 // онлайн-запись клиники: кнопки открывают виджет, а если он не загрузился — работает прежний переход к форме
 function openBooking(){var b=window.onlineBooking;if(b&&typeof b.open==="function"){closeAll();b.open();return true}return false}
-document.querySelectorAll("[data-book]").forEach(function(a){a.addEventListener("click",function(e){if(openBooking())e.preventDefault()})});
+function bindBook(a){a.addEventListener("click",function(e){if(openBooking())e.preventDefault()})}
+document.querySelectorAll("[data-book]").forEach(bindBook);
+// пока система записи клиники доступна, свои формы записи не нужны: вместо них кнопка.
+// если скрипт не загрузился, формы остаются и работают как раньше
+document.addEventListener("DOMContentLoaded",function(){
+if(!(window.onlineBooking&&window.onlineBooking.open))return;
+var mk=function(cls,txt){var a=document.createElement("a");a.className=cls;a.href="#";a.textContent=txt;a.setAttribute("data-book","");bindBook(a);return a};
+var f=document.getElementById("f");
+if(f){var box=document.createElement("div");box.className="book-box";
+var h=document.createElement("h3");h.textContent="Записаться на консультацию";
+var p1=document.createElement("p");p1.textContent="Выберите врача, услугу и удобное время в системе записи клиники — место бронируется сразу.";
+var p2=document.createElement("p");p2.appendChild(mk("btn","Записаться онлайн"));
+var p3=document.createElement("p");p3.className="book-or";p3.innerHTML='Или позвоните: <a href="tel:+79891999001">+7 (989) 199-90-01</a>';
+box.appendChild(h);box.appendChild(p1);box.appendChild(p2);box.appendChild(p3);
+f.parentNode.replaceChild(box,f)}
+document.querySelectorAll(".cta-form").forEach(function(cf){var row=document.createElement("div");row.className="cta-row";row.appendChild(mk("btn light","Записаться онлайн"));cf.parentNode.replaceChild(row,cf)});
+});
 })();
 </script>
