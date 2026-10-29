@@ -1,3 +1,9 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Стоматология Кастадент в Краснодаре: лечение и имплантация зубов, виниры, коронки, ортодонтия, гнатология. Ул. Архитектора Ишунина, 3.">
 <title>Каста Дент</title>
 <style>
 /* Layout: fixed header over a full-bleed photo hero, then centred content bands on warm beige */
@@ -7,6 +13,8 @@ color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#231a11;--surface:rgba(255,255,255,.07);--ink:#f3e8d8;--muted:#c0ab8d;--accent:#d9a862;--on-accent:#2a1d0e;--line:rgba(255,255,255,.14);color-scheme:dark}}
 :root[data-theme="dark"]{--bg:#231a11;--surface:rgba(255,255,255,.07);--ink:#f3e8d8;--muted:#c0ab8d;--accent:#d9a862;--on-accent:#2a1d0e;--line:rgba(255,255,255,.14);color-scheme:dark}
 *,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+img{max-width:100%}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Onest,system-ui,sans-serif;overflow-x:hidden}
 h1,h2,h3{font-family:Unbounded,Georgia,system-ui,sans-serif;line-height:1.15;margin:0;text-wrap:balance}
@@ -291,6 +299,8 @@ nav{display:none}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.hero h1 span{opacity:1;transform:none}}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
 <div class="bg" aria-hidden="true"><i></i><i></i><i></i></div>
 <header><a class="logo" href="#top"><i>К</i>Кастадент</a><nav><span class="has-drop"><a href="#" data-open="aboutModal" aria-haspopup="true">Компания</a><span class="drop" role="menu"><a href="#" role="menuitem" data-open="teamModal">Врачи</a><a href="#" role="menuitem" data-open="docsModal">Лицензии и документы</a></span></span><a href="#team">Врачи</a><a href="#" data-open="srvModal">Услуги</a><a href="#" data-open="priceModal">Прайс</a><a href="#promo">Акции</a><a href="#reviews">Отзывы</a><a href="#" data-open="contactsModal">Контакты</a></nav>
 <div class="hd"><span class="tel">г. Краснодар · <a href="tel:+79891999001">+7 (989) 199-90-01</a></span><a class="btn" href="#contact"><span class="t-long">Записаться на прием</span><span class="t-short">Записаться</span></a><button class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button></div>
@@ -470,3 +480,5 @@ document.addEventListener('keydown',function(e){if(e.key!=='Escape')return;if(!l
 document.querySelectorAll('[data-goto]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();closeAll();var t=document.querySelector(a.getAttribute('data-goto'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
 })();
 </script>
+</body>
+</html>
