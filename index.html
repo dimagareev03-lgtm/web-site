@@ -8,10 +8,10 @@
 <style>
 /* Layout: fixed header over a full-bleed photo hero, then centred content bands on warm beige */
 :root{
---bg:#f7f2e9;--surface:#fffcf6;--surface-2:#f1e9dc;--ink:#2b2118;--muted:#7a6c5b;--accent:#8f5e26;--on-accent:#fff8ef;--line:rgba(43,33,24,.13);--shadow:28,18,6;--blob:.5;
+--bg:#f7f2e9;--surface:#fffcf6;--surface-2:#f1e9dc;--ink:#2b2118;--muted:#7a6c5b;--accent:#8f5e26;--on-accent:#fff8ef;--line:rgba(43,33,24,.13);--shadow:28,18,6;
 color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#18130e;--surface:#221b14;--surface-2:#2b231a;--ink:#f2e9dc;--muted:#b5a692;--accent:#dca96a;--on-accent:#241a0e;--line:rgba(255,255,255,.11);--shadow:0,0,0;--blob:.14;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#18130e;--surface:#221b14;--surface-2:#2b231a;--ink:#f2e9dc;--muted:#b5a692;--accent:#dca96a;--on-accent:#241a0e;--line:rgba(255,255,255,.11);--shadow:0,0,0;--blob:.14;color-scheme:dark}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#18130e;--surface:#221b14;--surface-2:#2b231a;--ink:#f2e9dc;--muted:#b5a692;--accent:#dca96a;--on-accent:#241a0e;--line:rgba(255,255,255,.11);--shadow:0,0,0;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#18130e;--surface:#221b14;--surface-2:#2b231a;--ink:#f2e9dc;--muted:#b5a692;--accent:#dca96a;--on-accent:#241a0e;--line:rgba(255,255,255,.11);--shadow:0,0,0;color-scheme:dark}
 *,*::before,*::after{box-sizing:border-box}
 [hidden]{display:none!important}
 img{max-width:100%}
@@ -20,12 +20,13 @@ body{margin:0;background:var(--bg);background-image:linear-gradient(180deg,color
 h1,h2,h3{font-family:Unbounded,Georgia,system-ui,sans-serif;line-height:1.12;letter-spacing:-.018em;margin:0;text-wrap:balance}
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
-.bg{display:none}
-.bg i{position:absolute;width:55vmax;height:55vmax;border-radius:50%;filter:blur(90px);opacity:var(--blob);animation:drift 22s ease-in-out infinite alternate}
-.bg i:nth-child(1){background:#e9d5b2;left:-15vmax;top:-15vmax}
-.bg i:nth-child(2){background:#dcbd92;right:-20vmax;top:25vh;animation-duration:28s}
-.bg i:nth-child(3){background:#c7a877;left:20vw;bottom:-30vmax;opacity:calc(var(--blob) * .68);animation-duration:34s}
-@keyframes drift{to{transform:translate(8vw,6vh) scale(1.2)}}
+/* фон страницы: тёплые засветки, точечная сетка и тонкие окружности.
+   первый экран его не показывает — там фотография во всю высоту */
+.bg{position:fixed;inset:0;z-index:-3;overflow:hidden;pointer-events:none;background:radial-gradient(68vw 54vh at 6% 2%,color-mix(in srgb,var(--accent) 14%,transparent),transparent 68%),radial-gradient(56vw 46vh at 98% 36%,color-mix(in srgb,var(--accent) 11%,transparent),transparent 66%),radial-gradient(72vw 42vh at 28% 104%,color-mix(in srgb,var(--accent) 10%,transparent),transparent 70%)}
+.bg i{position:absolute;display:block}
+.bg i:nth-child(1){inset:0;background-image:radial-gradient(var(--ink) 1px,transparent 1px);background-size:28px 28px;opacity:.05;-webkit-mask-image:linear-gradient(180deg,transparent,#000 16%,#000 74%,transparent);mask-image:linear-gradient(180deg,transparent,#000 16%,#000 74%,transparent)}
+.bg i:nth-child(2){width:64vmin;height:64vmin;right:-17vmin;top:12vh;border:1px solid color-mix(in srgb,var(--accent) 24%,transparent);border-radius:50%}
+.bg i:nth-child(3){width:40vmin;height:40vmin;left:-11vmin;bottom:10vh;border:1px solid color-mix(in srgb,var(--accent) 18%,transparent);border-radius:50%}
 header{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:calc(14px + env(safe-area-inset-top,0px)) 4vw 14px;backdrop-filter:blur(14px) saturate(1.2);background:color-mix(in srgb,var(--bg) 86%,transparent);border-bottom:1px solid var(--line)}
 .logo{display:inline-flex;align-items:center;gap:7px;font:500 19px/1 Onest,system-ui,sans-serif;letter-spacing:.4px;color:var(--ink);white-space:nowrap}
 .logo i{font:700 25px/1 Unbounded,Onest,sans-serif;font-style:normal;color:var(--accent);position:relative;top:1px}
