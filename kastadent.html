@@ -99,7 +99,7 @@ label.c input[type=date],label.c input[type=time]{width:100%;margin-top:6px}
 .sec-head h2{margin:0}
 .all{font-size:13px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
 .all:hover{color:var(--accent)}
-.promo{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.promo{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .pcard{position:relative;display:block;aspect-ratio:4/5;border-radius:16px;overflow:hidden;background:var(--surface-2);transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
 .pcard:hover{transform:translateY(-4px);box-shadow:0 26px 44px -30px rgba(var(--shadow),.55)}
 .pcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
@@ -460,7 +460,6 @@ html.a11y .btn,html.a11y .a11y-bar button{transition:none}
 <a class="pcard rv" href="#" data-open="promo1"><img src="promo-1c.jpg" alt="Пациентка на осмотре" loading="lazy"><span class="badge">Бесплатно</span><h3>Бесплатная общая диагностика и план лечения</h3></a>
 <a class="pcard rv" href="#" data-open="promo2"><img src="promo-2c.jpg" alt="Праздничный торт со свечами" loading="lazy"><span class="badge">Скидка 10%</span><h3>День рождения 10%</h3></a>
 <a class="pcard rv" href="#" data-open="promo3"><img src="promo-3c.jpg" alt="Профессиональная гигиена полости рта" loading="lazy"><span class="badge">−1000 руб.</span><h3>Чистка со скидкой</h3></a>
-<a class="pcard rv" href="#" data-open="promo4"><img src="promo-4c.jpg" alt="Девочка с игрушечным зубом" loading="lazy"><h3>Игрушка для маленького пациента</h3></a>
 </div></section>
 <section id="clinic"><h2 class="rv">Клиника</h2><div class="clinic rv"><span><img src="clinic-1.jpg" alt="Зона ожидания с диванами" loading="lazy"></span><span><img src="clinic-2.jpg" alt="Стоматологический кабинет у окна" loading="lazy"></span><span><img src="clinic-3.jpg" alt="Кресло и оборудование врача" loading="lazy"></span><span><img src="clinic-4.jpg" alt="Ресепшен клиники" loading="lazy"></span><span><img src="clinic-5.jpg" alt="Стойка администратора и холл" loading="lazy"></span><span><img src="clinic-6.jpg" alt="Холл клиники с растениями" loading="lazy"></span></div></section>
 <div id="winFoot" hidden>
@@ -532,11 +531,6 @@ html.a11y .btn,html.a11y .a11y-bar button{transition:none}
 <div class="modal" id="promo3" hidden><div class="modal-back" data-close></div><div class="modal-win wide promo-win" role="dialog" aria-modal="true" aria-labelledby="promo3t"><button class="modal-x" type="button" data-close aria-label="Закрыть">✕</button>
 <div class="phero"><img src="promo-3.jpg" alt="Профессиональная гигиена полости рта"><div class="phero-tx"><span>АКЦИЯ</span><h2 id="promo3t">Чистка со скидкой</h2></div></div>
 <div class="pbody"><h3>Описание акции</h3><p>Кто же из нас не хочет иметь красивую и здоровую улыбку? Кто не мечтает о свежем дыхании и здоровых зубах? Все это можно получить благодаря профессиональной гигиене зубов. Она не только поможет улучшить состояние зубов и десен, но и предотвратит развитие кариеса и пародонтита. А еще, гигиена зубов позволит сохранить белоснежный цвет зубов и свежесть дыхания.</p><p class="lead3">Теперь вы можете получить качественную гигиену зубов по цене всего 3500 рублей вместо обычных 4500 рублей.</p><p>Сделайте этот шаг к здоровью прямо сейчас, и записывайтесь на профессиональную гигиену зубов!</p></div>
-<section class="act"><h3>Пора<br>действовать!</h3><i></i><p>Не упустите возможность записаться по акции и получить высококачественное лечение зубов со значительной экономией!</p><a class="btn outline2" href="#" data-promo-form>Записаться по акции</a></section>
-</div></div>
-<div class="modal" id="promo4" hidden><div class="modal-back" data-close></div><div class="modal-win wide promo-win" role="dialog" aria-modal="true" aria-labelledby="promo4t"><button class="modal-x" type="button" data-close aria-label="Закрыть">✕</button>
-<div class="phero"><img src="promo-4.jpg" alt="Девочка с игрушечным зубом"><div class="phero-tx"><span>АКЦИЯ</span><h2 id="promo4t">Игрушка для маленького пациента</h2></div></div>
-<div class="pbody"><p class="lead3">В нашем кабинете детской стоматологии стоит сундук с детскими игрушками, всем маленьким пациентам мы предлагаем взять себе игрушку в подарок, чтобы у ребенка осталось хорошее впечатление о посещении доктора :)</p></div>
 <section class="act"><h3>Пора<br>действовать!</h3><i></i><p>Не упустите возможность записаться по акции и получить высококачественное лечение зубов со значительной экономией!</p><a class="btn outline2" href="#" data-promo-form>Записаться по акции</a></section>
 </div></div>
 <div class="modal" id="priceModal" hidden><div class="modal-back" data-close></div><div class="modal-win wide" role="dialog" aria-modal="true" aria-labelledby="priceTitle"><button class="modal-x" type="button" data-close aria-label="Закрыть">✕</button><p class="crumb">Прайс</p><h2 id="priceTitle">Прайс</h2>
