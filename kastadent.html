@@ -631,7 +631,7 @@ var nm=f.querySelector('input[name=name]').value||'не указано',ph=f.que
 // заявка по акции уходит письмом на почту клиники (kastadent@gmail.com) через Web3Forms — ключ привязан к этой почте
 var promo=f.closest('.promo-win');
 if(promo){var t=promo.querySelector('.phero-tx h2').textContent,btn=f.querySelector('button[type=submit]');btn.disabled=true;ok.hidden=false;ok.textContent='Отправляем заявку…';
-fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({access_key:'4c07a559-b378-40fd-a23e-9e051c9eb92e',subject:'Запись по акции: '+t,from_name:'Сайт Кастадент','Акция':t,'Имя':nm,'Телефон':ph})})
+fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({access_key:'a1a75637-d95c-4797-892e-49457c3486e5',subject:'Запись по акции: '+t,from_name:'Сайт Кастадент','Акция':t,'Имя':nm,'Телефон':ph})})
 .then(function(r){return r.json()}).then(function(j){if(!j||String(j.success)!=='true')throw 0;ok.textContent='Спасибо! Заявка по акции «'+t+'» отправлена, администратор перезвонит вам по номеру '+ph+'.';f.reset()})
 .catch(function(){ok.textContent='Не удалось отправить заявку. Позвоните нам: ';var a=document.createElement('a');a.href='tel:+79891999001';a.textContent='+7 (989) 199-90-01';ok.appendChild(a)})
 .then(function(){btn.disabled=false});return}
