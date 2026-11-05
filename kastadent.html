@@ -144,7 +144,7 @@ label.c input[type=date],label.c input[type=time]{width:100%;margin-top:6px}
 .fb-ok{grid-column:1/-1;margin:0;color:var(--accent);font-weight:500}
 a[href^="tel:"]{white-space:nowrap;transition:color .2s}
 a[href^="tel:"]:hover{color:var(--accent)}
-.clinic{display:flex;gap:3px;height:min(36vh,330px);border-radius:16px;overflow:hidden}
+.clinic{display:grid;grid-template-columns:repeat(5,1fr);grid-auto-rows:min(19vw,230px);gap:4px;border-radius:16px;overflow:hidden}
 .clinic span{flex:1 1 0;min-width:0;overflow:hidden}
 .clinic img{width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in;transition:transform .6s}
 .clinic span:hover img{transform:scale(1.07)}
@@ -222,9 +222,25 @@ main{display:flex;flex-direction:column}
 .about-hero{width:100%;height:min(38vh,340px);object-fit:cover;object-position:50% 58%;border-radius:18px;display:block}
 .about-main h3{font-size:clamp(18px,2vw,23px);text-transform:uppercase;letter-spacing:.03em;margin:30px 0 16px}
 .about-main p{margin:0 0 14px;color:var(--muted);max-width:68ch}
-.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px}
+/* окно «О компании»: текст проявляется по очереди при каждом открытии, у специалистов — золотая карточка и подчёркивание */
+.about-main .dots{gap:12px;margin:6px 0 22px}
+.about-main .dots li{padding:14px 18px 14px 42px;border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--muted);transition:border-color .3s,transform .3s}
+.about-main .dots li::before{left:18px;top:24px}
+.about-main .dots li:hover{border-color:color-mix(in srgb,var(--accent) 45%,var(--line));transform:translateX(4px)}
+.about-main li b{color:var(--ink);background:linear-gradient(var(--accent),var(--accent)) 0 100%/0 2px no-repeat;padding-bottom:1px}
+.about-main .harmony{margin:26px 0 12px;font:600 clamp(19px,2.2vw,26px)/1.25 Unbounded,Georgia,system-ui,sans-serif;color:var(--ink)}
+.about-main .harmony b{font-weight:inherit;background:linear-gradient(90deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--ink)),var(--accent));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent}
+.ab-ready [style*="--i"]{opacity:0}
+.about-main .ab-in{opacity:1;animation:aboutIn .7s cubic-bezier(.2,.8,.2,1) both;animation-delay:var(--d,0ms)}
+.about-main .ab-in b{animation:aboutLine .7s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--d,0ms) + 450ms)}
+#aboutModal:not([hidden]) .about-main .harmony b{animation:aboutShine 4s ease-in-out infinite}
+@keyframes aboutIn{from{opacity:0;transform:translateY(16px)}}
+@keyframes aboutLine{to{background-size:100% 2px}}
+@keyframes aboutShine{50%{background-position:100% 0}}
+@media (prefers-reduced-motion:reduce){.about-main [style*="--i"]{opacity:1}#aboutModal .about-main *{animation:none!important}.about-main li b{background-size:100% 2px}}
+.gal{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:30px}
 .gal span{display:block;overflow:hidden;border-radius:12px}
-.gal img{width:100%;height:172px;object-fit:cover;display:block;transition:transform .5s}
+.gal img{width:100%;height:120px;object-fit:cover;display:block;transition:transform .5s}
 .gal span:hover img{transform:scale(1.07)}
 .about-nav a.on{background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent);font-weight:500}
 .crumb a{color:inherit;border-bottom:1px solid var(--line)}
@@ -462,7 +478,7 @@ html.a11y .btn,html.a11y .a11y-bar button{transition:none}
 <a class="pcard rv" href="#" data-open="promo3"><img src="promo-3c.jpg" alt="Профессиональная гигиена полости рта" loading="lazy"><span class="badge">−1000 руб.</span><h3>Чистка со скидкой</h3></a>
 <a class="pcard rv" href="#" data-open="promo4"><img src="promo-4c.jpg" alt="Пожилая пациентка улыбается в кресле стоматолога" loading="lazy"><span class="badge">Скидка 10%</span><h3>Пенсионерам по вторникам</h3></a>
 </div></section>
-<section id="clinic"><h2 class="rv">Клиника</h2><div class="clinic rv"><span><img src="clinic-1.jpg" alt="Зона ожидания с диванами" loading="lazy"></span><span><img src="clinic-2.jpg" alt="Стоматологический кабинет у окна" loading="lazy"></span><span><img src="clinic-3.jpg" alt="Кресло и оборудование врача" loading="lazy"></span><span><img src="clinic-4.jpg" alt="Ресепшен клиники" loading="lazy"></span><span><img src="clinic-5.jpg" alt="Стойка администратора и холл" loading="lazy"></span><span><img src="clinic-6.jpg" alt="Холл клиники с растениями" loading="lazy"></span></div></section>
+<section id="clinic"><h2 class="rv">Клиника</h2><div class="clinic rv"><span><img src="clinic-7.jpg" alt="Вход в клинику Кастадент" loading="lazy"></span><span><img src="clinic-1.jpg" alt="Зона ожидания с диванами" loading="lazy"></span><span><img src="clinic-2.jpg" alt="Стоматологический кабинет у окна" loading="lazy"></span><span><img src="clinic-3.jpg" alt="Кресло и оборудование врача" loading="lazy"></span><span><img src="clinic-4.jpg" alt="Ресепшен клиники" loading="lazy"></span><span><img src="clinic-5.jpg" alt="Стойка администратора и холл" loading="lazy"></span><span><img src="clinic-6.jpg" alt="Холл клиники с растениями" loading="lazy"></span><span><img src="clinic-9.jpg" alt="Холл и зона ожидания" loading="lazy"></span><span><img src="clinic-10.jpg" alt="Двери кабинетов" loading="lazy"></span><span><img src="clinic-8.jpg" alt="Санузел для пациентов" loading="lazy"></span></div></section>
 <div id="winFoot" hidden>
 <section class="cta"><h3>Записаться на консультацию</h3>
 <form class="cta-form"><div class="cta-fields"><label><span>Имя</span><input type="text" name="name" autocomplete="name"></label><label><span>Телефон *</span><input type="tel" name="phone" required autocomplete="tel"></label></div>
@@ -578,21 +594,21 @@ html.a11y .btn,html.a11y .a11y-bar button{transition:none}
 <div class="about"><aside class="about-nav"><a href="#" data-open="teamModal">Врачи</a><a href="#" data-open="docsModal">Лицензии и документы</a></aside>
 <div class="about-main"><img class="about-hero" src="clinic-4.jpg" alt="Ресепшен клиники Кастадент" loading="lazy">
 <h3>О клинике</h3>
-<p>Стоматология Кастадент — это современная стоматология комфорт класса, сочетающая в себе здоровье, эстетику и профессионализм.</p>
-<p>Мы, с любовью и теплотой, создали пространство, в котором Ваша улыбка становится идеальной, а здоровье зубов и суставов — приоритетом команды высококлассных специалистов Кастадент.</p>
-<p>У нас работают топовые специалисты с отличной репутацией и огромным опытом:</p>
+<p style="--i:1">Стоматология Кастадент — это современная стоматология комфорт класса, сочетающая в себе здоровье, эстетику и профессионализм.</p>
+<p style="--i:2">Мы, с любовью и теплотой, создали пространство, в котором Ваша улыбка становится идеальной, а здоровье зубов и суставов — приоритетом команды высококлассных специалистов Кастадент.</p>
+<p style="--i:3">У нас работают топовые специалисты с отличной репутацией и огромным опытом:</p>
 <ul class="dots">
-<li><b>Гнатолог</b> — узкоспециализированный врач-стоматолог с большим опытом, необходимой диагностикой и глубоким пониманием биомеханики челюсти, который избавит от боли в суставах, щелчков, головных болей, проблем со смыканием зубов, жевательными мышцами.</li>
-<li><b>Ортодонт</b> — это наш волшебник идеальной улыбки, владеющий современными методами исправления прикуса (брекеты, элайнеры, лингвальные системы). Скульптор ровных зубов, архитектор Вашего прикуса и стратег красивой улыбки.</li>
-<li><b>Ортопед-протезист</b>, который восстанавливает зубы так, чтобы они выглядели и функционировали, как натуральные. Он создает коронки, виниры и протезы так, что никто не отличит их от настоящих!</li>
-<li><b>Имплантолог</b>, опыт которого внушает уверенность. Он создает полную имитацию натурального зуба, он не просто ставит импланты, он возвращает уверенность, комфорт и свободу улыбаться без ограничений.</li>
-<li><b>Стоматологи-хирурги</b> у нас — мастера безупречного решения сложных задач. Они не просто удаляют зубы, а творят искусство в самых деликатных зонах, превращая сложные операции в предсказуемый комфорт.</li>
-<li><b>Стоматологи-терапевты</b> безупречно лечат зубы, бережно сохраняя то, что дано Вам природой. Проводят профессиональную гигиену, отбеливание и знают, как сделать лечение комфортным даже для самых тревожных пациентов.</li>
+<li style="--i:4"><b>Гнатолог</b> — узкоспециализированный врач-стоматолог с большим опытом, необходимой диагностикой и глубоким пониманием биомеханики челюсти, который избавит от боли в суставах, щелчков, головных болей, проблем со смыканием зубов, жевательными мышцами.</li>
+<li style="--i:5"><b>Ортодонт</b> — это наш волшебник идеальной улыбки, владеющий современными методами исправления прикуса (брекеты, элайнеры, лингвальные системы). Скульптор ровных зубов, архитектор Вашего прикуса и стратег красивой улыбки.</li>
+<li style="--i:6"><b>Ортопед-протезист</b>, который восстанавливает зубы так, чтобы они выглядели и функционировали, как натуральные. Он создает коронки, виниры и протезы так, что никто не отличит их от настоящих!</li>
+<li style="--i:7"><b>Имплантолог</b>, опыт которого внушает уверенность. Он создает полную имитацию натурального зуба, он не просто ставит импланты, он возвращает уверенность, комфорт и свободу улыбаться без ограничений.</li>
+<li style="--i:8"><b>Стоматологи-хирурги</b> у нас — мастера безупречного решения сложных задач. Они не просто удаляют зубы, а творят искусство в самых деликатных зонах, превращая сложные операции в предсказуемый комфорт.</li>
+<li style="--i:9"><b>Стоматологи-терапевты</b> безупречно лечат зубы, бережно сохраняя то, что дано Вам природой. Проводят профессиональную гигиену, отбеливание и знают, как сделать лечение комфортным даже для самых тревожных пациентов.</li>
 </ul>
-<p><b>Мы не просто лечим зубы — мы создаем гармонию.</b></p>
-<p>Мы не посчитаем вам лишних доп. услуг, если они не нужны для решения вашей задачи. Вы сможете полностью доверять нашим врачам.</p>
-<p>Записывайтесь на прием и убедитесь в этом сами.</p>
-<div class="gal"><span><img src="clinic-1.jpg" alt="Зона ожидания с диванами" loading="lazy"></span><span><img src="clinic-2.jpg" alt="Стоматологический кабинет у окна" loading="lazy"></span><span><img src="clinic-3.jpg" alt="Кресло и оборудование врача" loading="lazy"></span><span><img src="clinic-4.jpg" alt="Ресепшен клиники" loading="lazy"></span><span><img src="clinic-5.jpg" alt="Стойка администратора и холл" loading="lazy"></span><span><img src="clinic-6.jpg" alt="Холл клиники с растениями" loading="lazy"></span></div>
+<p class="harmony" style="--i:10"><b>Мы не просто лечим зубы — мы создаем гармонию.</b></p>
+<p style="--i:11">Мы не посчитаем вам лишних доп. услуг, если они не нужны для решения вашей задачи. Вы сможете полностью доверять нашим врачам.</p>
+<p style="--i:12">Записывайтесь на прием и убедитесь в этом сами.</p>
+<div class="gal"><span><img src="clinic-7.jpg" alt="Вход в клинику Кастадент" loading="lazy"></span><span><img src="clinic-1.jpg" alt="Зона ожидания с диванами" loading="lazy"></span><span><img src="clinic-2.jpg" alt="Стоматологический кабинет у окна" loading="lazy"></span><span><img src="clinic-3.jpg" alt="Кресло и оборудование врача" loading="lazy"></span><span><img src="clinic-4.jpg" alt="Ресепшен клиники" loading="lazy"></span><span><img src="clinic-5.jpg" alt="Стойка администратора и холл" loading="lazy"></span><span><img src="clinic-6.jpg" alt="Холл клиники с растениями" loading="lazy"></span><span><img src="clinic-9.jpg" alt="Холл и зона ожидания" loading="lazy"></span><span><img src="clinic-10.jpg" alt="Двери кабинетов" loading="lazy"></span><span><img src="clinic-8.jpg" alt="Санузел для пациентов" loading="lazy"></span></div>
 </div></div></div></div>
 <div class="modal" id="docsModal" hidden><div class="modal-back" data-close></div><div class="modal-win wide" role="dialog" aria-modal="true" aria-labelledby="docsTitle"><button class="modal-x" type="button" data-close aria-label="Закрыть">✕</button><p class="crumb"><a href="#" data-open="aboutModal">О компании</a></p><h2 id="docsTitle">Лицензии и документы</h2><div class="about"><aside class="about-nav"><a href="#" data-open="teamModal">Врачи</a><a href="#" class="on">Лицензии и документы</a></aside><div class="about-main"><p class="certs-intro">Сертификаты соответствия — это документы, подтверждающие соответствие всем соответствующим требованиям в министерских законах текущего государства, установленными в обязательном порядке.</p>
 <div class="certs">
@@ -757,5 +773,15 @@ else if(b.hasAttribute("data-a11y-off"))st.on=false;
 save();apply()});
 window.addEventListener("resize",setH);
 apply();
+})();
+// окно «О компании»: абзацы и карточки проявляются, когда до них доходит прокрутка
+(function(){
+var m=document.getElementById("aboutModal"),box=m&&m.querySelector(".about-main");
+if(!box||!("IntersectionObserver" in window))return;
+var items=[].slice.call(box.querySelectorAll('[style*="--i"]'));box.classList.add("ab-ready");
+var io=new IntersectionObserver(function(es){var k=0;es.forEach(function(e){if(e.isIntersecting&&!e.target.classList.contains("ab-in")){e.target.style.setProperty("--d",(k++*90)+"ms");e.target.classList.add("ab-in")}})},{threshold:.15});
+items.forEach(function(el){io.observe(el)});
+// после закрытия окна анимация сбрасывается и снова играет при следующем открытии
+new MutationObserver(function(){if(m.hidden)items.forEach(function(el){el.classList.remove("ab-in");io.unobserve(el);io.observe(el)})}).observe(m,{attributes:true,attributeFilter:["hidden"]});
 })();
 </script>
